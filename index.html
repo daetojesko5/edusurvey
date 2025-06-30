@@ -23,17 +23,35 @@
         }
 
         .question {
-            display: none;
             animation: fadeIn 0.4s ease-in-out;
         }
 
-        .question.active {
+        .question p {
+            display: none;
+        }
+
+        .question p.active {
             display: block;
         }
 
         .btn-answer {
             width: 150px;
             margin: 10px;
+        }
+
+        .vspace {
+            height: 100px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .gif-background {
+            width: 100vw;
+            min-height: 550px;
+            background-image: url('thankyou.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         @keyframes fadeIn {
@@ -55,39 +73,15 @@
         <h2 class="mb-4">Інтимне опитування</h2>
 
         <form id="surveyForm">
-            <div class="question active" data-question="1">
-                <p>1. Чи був у тебе секс із кимось, чиє ім’я ти навіть не запам’ятав(-ла)?</p>
-                <button type="button" class="btn btn-success btn-answer" data-answer="Так">Так</button>
-                <button type="button" class="btn btn-danger btn-answer" data-answer="Ні">Ні</button>
-            </div>
-
-            <div class="question" data-question="2">
+            <div class="question" data-question="1">
+                <p class="active">1. Чи був у тебе секс із кимось, чиє ім’я ти навіть не запам’ятав(-ла)?</p>
                 <p>2. Чи заводив(-ла) ти романтичне листування або секстинг із кимось, кого ніколи не бачив(-ла) наживо?
                 </p>
-                <button type="button" class="btn btn-success btn-answer" data-answer="Так">Так</button>
-                <button type="button" class="btn btn-danger btn-answer" data-answer="Ні">Ні</button>
-            </div>
-
-            <div class="question" data-question="3">
                 <p>3. Чи фантазував(-ла) ти колись про людину, яка абсолютно тобі не підходить у реальному житті?</p>
-                <button type="button" class="btn btn-success btn-answer" data-answer="Так">Так</button>
-                <button type="button" class="btn btn-danger btn-answer" data-answer="Ні">Ні</button>
-            </div>
-
-            <div class="question" data-question="4">
                 <p>4. Чи були у тебе думки зайнятись сексом у публічному місці?</p>
+                <div class="vspace"></div>
                 <button type="button" class="btn btn-success btn-answer" data-answer="Так">Так</button>
                 <button type="button" class="btn btn-danger btn-answer" data-answer="Ні">Ні</button>
-            </div>
-
-            <div class="question" data-question="5">
-                <p>5. Чи пробував(-ла) ти колись щось нове у ліжку тільки тому, що партнер дуже просив?</p>
-                <button type="button" class="btn btn-success btn-answer" data-answer="Так">Так</button>
-                <button type="button" class="btn btn-danger btn-answer" data-answer="Ні">Ні</button>
-            </div>
-
-            <div class="question" id="thankYou">
-                <h4 class="text-success">Кінець опитування</h4>
             </div>
         </form>
     </div>

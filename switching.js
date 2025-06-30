@@ -7,7 +7,6 @@ const vspace = document.querySelector(".vspace");
 const buttons = document.querySelectorAll('.btn-answer');
 let proceed = true;
 
-
 buttons.forEach(button => {
     button.addEventListener('mousedown', () => {
         const answer = button.dataset.answer;

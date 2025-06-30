@@ -14,7 +14,7 @@ buttons.forEach(button => {
         const isYes = answer == "Так";
 
 
-        if (true || currentIndex == questions.length - 1) {
+        if (currentIndex == questions.length - 1) {
             proceed = false;
             vspace.style.color = "red";
             showVspace();

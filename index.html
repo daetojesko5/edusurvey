@@ -22,6 +22,7 @@
             text-align: center;
         }
 
+
         .question {
             animation: fadeIn 0.4s ease-in-out;
         }
@@ -39,10 +40,28 @@
             margin: 10px;
         }
 
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #overlay img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: fill;
+        }
+
         .vspace {
-            height: 100px;
-            font-size: 50px;
-            font-weight: bold;
+            height: 50px;
+            /* font-size: 50px; */
+            /* font-weight: bold; */
         }
 
         .gif-background {

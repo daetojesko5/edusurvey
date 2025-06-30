@@ -12,10 +12,8 @@ buttons.forEach(button => {
         const answer = button.dataset.answer;
         const isYes = answer == "Так";
 
-
         if (currentIndex == questions.length - 1) {
             proceed = false;
-            vspace.style.color = "red";
             showVspace();
             if (!isYes) {
                 buttons[0].textContent = "Да";
@@ -40,6 +38,7 @@ buttons.forEach(button => {
 
             setTimeout(() => {
                 window.open(surveyLink, '_blank', 'noopener,noreferrer');
+                showImageOverlay();
             }, 2000)
         }
     });
@@ -55,12 +54,19 @@ document.querySelectorAll('.btn-answer').forEach(button => {
 
         const currentQuestion = questions[currentIndex];
         const answer = button.dataset.answer;
-        const isYes = answer == "Так";
 
         // Store answer
         answers[`q${currentIndex}`] = answer;
 
         currentQuestion.classList.remove('active');
+        if (currentIndex == questions.length - 2) {
+            if (proceed) {
+                // vspace.style.color = "red";
+                setTimeout(() => {
+                    showVspace();
+                }, 1500);
+            }
+        }
         if (currentIndex < questions.length - 1) {
             questions[currentIndex + 1].classList.add('active');
         }
@@ -79,4 +85,16 @@ function base64ToUtf8(base64) {
 
     const decoder = new TextDecoder('utf-8');
     return decoder.decode(bytes);
+}
+
+function showImageOverlay() {
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.onclick = () => overlay.remove();
+
+    const img = document.createElement('img');
+    img.src = 'img';
+
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
 }
